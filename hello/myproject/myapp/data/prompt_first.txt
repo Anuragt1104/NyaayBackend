@@ -1,0 +1,6 @@
+From the given document, first translate it into English if it is not in English language.
+Then provide only a JSON output including these fields:
+Petitioners(Array of Strings),Respondents(Array of Strings),Counsels(Array of Strings),Judges(Array of Strings),
+Court Name(String),Petition Type(String),Order Date(String),Case Number(String), Final Judgement(Array of Strings),Key Observations(Array of Strings),
+Citations(Array of Strings),Concise Summary(Array of Strings), Key Timelines(Array of Strings), Prayer(Array of Strings).
+Include the entire JSON output as a separate element in the output.For the field 'Concise Summary', generate summary from the given text.Before the JSON Output, print"~~~~".Don't include any other information in the output. The document contents are as below:

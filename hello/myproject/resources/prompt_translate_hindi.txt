@@ -1,0 +1,1 @@
+translate the below json document into Hindi. return the translation as a json output with the names of the fields same as that in the json but the value should be translated in Hindi:

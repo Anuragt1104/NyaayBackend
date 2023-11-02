@@ -1,0 +1,56 @@
+From the given document, provide a JSON output including the below fields. For each field, I will provide a hint where to look for the field. For example, if the field is mentioned as
+"Field1(Hint: Use SpField name in the Proforma as String)", then look for the field named "SpField" in the Proforma section of the document and provide the value as a String datatype.
+Proforma can be split across multiple pages. If a field isn't found, don't hallucinate and don't create imaginary values. Return empty string when you don't find the field value from the text.
+Provide the fields in a JSON format as below:
+{
+        "CauseTitlePetitioner"(Hint:Use Petitioner name in the Proforma as String),
+        "CauseTitleRespondent"(Hint:Use Respondent name in the Proforma as String),
+        "NumberOfPetitioners"(Hint:Count the total number of petitioners as String),
+        "NumberOfRespondents"(Hint:Count the total number of respondents as String),
+        "CaseType"(Hint:Use the case type in the header section of the application as String),
+        "SpecialCategories"(Hint: Use the check box values under the Special Category in the Proforma as an Array of Strings),
+        "MainCategory"(Hint: Use the 'Main category classification' in the Proforma as String),
+        "SubCategories"(Hint: Use the 'Sub classification' in the Proforma as an Array of Strings),
+        "CourtType"("Hint: Always return 'Supreme Court of India' as String),
+        "StateName"(Hint:Always return 'Delhi' as String),
+        "BenchName"(Hint:Always return 'Delhi' as String),
+        "OrderChallenged"(Hint:Return 'true' if either 'High Court Judge Names' is populated in the Proforma or the 'Impugned Order Date' is present with a valid date in the Proforma otherwise return 'false'),
+        "PetitionerType"(Hint:Return Individual if the petitioner is an individual otherwise return Org as String),
+        "MainPetitionerName"(Hint:Use Petitioner name in the Proforma as String),
+        "PetitionerParent"(Hint:Use the parent of the Petitioner and return as String),
+        "PetitionerSpouse"(Hint:Use the spouse of the Petitioner and return as String),
+        "PetitionerDob"(Hint:Use the Petitioner's date of birth and return as String in yyyy-mm-dd format),
+        "PetitionerAge"(Hint:Use the Petitioner's date of birth to calculate the age and return as a String),
+        "PetitionerEMail"(Hint:Use the Petitioner's email in the Proforma as String),
+        "PetitionerMobile"(Hint:Use the Petitioner's mobile in the Proforma as String),
+        "PetitionerAddress"(Hint:Use the Petitioner's email in the Proforma as String),
+        "PetitionerDistrict"(Hint:Use the Petitioner's district from the petitioner's address in the Proforma as String),
+        "PetitionerCity"(Hint:Use the Petitioner's City from the petitioner's address in the Proforma as String),
+        "PetitionerState"(Hint:Use the Petitioner's State from the petitioner's address in the Proforma as String),
+        "PetitionerPincode"(Hint:Use the Petitioner's Pincode from the petitioner's address in the Proforma as String),
+        "RespondentType"(Hint:Return Individual if the respondent is an individual otherwise return Org as String),
+        "MainRespondentName"(Hint:Use Respondent name in the Proforma as String),
+        "RespondentParent"(Hint:Use the parent of the Respondent and return as String),
+        "RespondentSpouse"(Hint:Use the spouse of the Respondent and return as String),
+        "RespondentDob"(Hint:Use the Respondent's date of birth and return as String in yyyy-mm-dd format),
+        "RespondentAge"(Hint:Use the Respondent's date of birth to calculate the age and return as a String),
+        "RespondentEMail"(Hint:Use the Respondent's email in the Proforma as String),
+        "RespondentMobile"(Hint:Use the Respondent's mobile in the Proforma as String),
+        "RespondentAddress"(Hint:Use the Respondent's email in the Proforma as String),
+        "RespondentDistrict"(Hint:Use the Respondent's district from the Respondent's address in the Proforma as String),
+        "RespondentCity"(Hint:Use the Respondent's Pincode from the Respondent's address in the Proforma as String),
+        "RespondentState"(Hint:Use the Respondent's State from the Respondent's address in the Proforma as String),
+        "RespondentPincode"(Hint:Use the Respondent's Pincode from the Respondent's address in the Proforma as String),
+        "AdvocateName"(Hint:Use the Advocate Name in the Proforma as String),
+        "AdvocateEMail"(Hint:Use the Advocate Email in the Proforma as String),
+        "AdvocateMobile"(Hint:Use the Advocate Mobile in the Proforma as String),
+        "AdvocateRegistrationNumber"(Hint:Use the Advocate Registration Number in the Proforma as String),
+        "ImpugnedInterimOrderDate"(Hint:Use the 'Impugned Interim Order Date' in the Proforma and return as String in yyyy-mm-dd format),
+        "ImpugnedFinalOrderDate"(Hint:Use the 'Impugned Final Order Date' in the Proforma and return as String in yyyy-mm-dd format),
+        "ImpugnedOrderCourt"(Hint:Use the High Court in the Proforma as String),
+        "ImpugnedOrderJudges"(Hint:Use the Judge Names in the Proforma as an Array of Strings)
+
+    }
+
+}
+Include the entire JSON output as a separate element in the output.Before the JSON Output, print"~~~~".Don't include any other information in the output. The document contents are as below:

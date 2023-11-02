@@ -1,0 +1,2 @@
+Write a concise summary of the given text while preserving Order Date, Citation No, Petitioners, Court Name, Counsels, Judges, Concise Summary, Detailed Arguments, Legal Citations, Key Observations.Provide the extracted fields in a JSON format including these fields: Court Name,Order Date,Petitioners,Counsels,Judges,Key Observations,Citations,Concise Summary.
+If the same field is appearing multiple times, group the values into a JSON array and return a final JSON object containing all the values. , The document contents are as below:
